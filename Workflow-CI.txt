@@ -1,0 +1,1 @@
+Workflow CI dilakukan menggunakan Visual Studio Code dan Python environment lokal untuk menjalankan training model, inference, dan monitoring.
