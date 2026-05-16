@@ -26,4 +26,4 @@ jobs:
       - name: Run MLflow Project
         run: |
           cd Membangun_model
-          mlflow run .
+          mlflow run . --env-manager=local
