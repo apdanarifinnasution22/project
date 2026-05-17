@@ -1,0 +1,18 @@
+Repository GitHub Khusus Eksperimen Dataset
+https://github.com/apdanarifinnasution22/eksperimen-sml-apdanarifin
+
+Isi Repository Eksperimen Dataset:
+- Notebook eksperimen dan EDA
+- Dataset mentah atau dataset hasil preprocessing
+- Folder preprocessing
+- File Eksperimen_SML_ApdanArifin.ipynb
+- File dataset_preprocessing.csv
+
+Lokasi File Eksperimen pada Folder Submission:
+preprocessing/Eksperimen_SML_ApdanArifin.ipynb
+
+Lokasi Dataset Hasil Preprocessing:
+preprocessing/dataset_preprocessing.csv
+
+Catatan:
+Repository eksperimen dataset dibuat terpisah dari repository Workflow CI sesuai dengan instruksi submission Dicoding.
