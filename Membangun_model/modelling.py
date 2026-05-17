@@ -7,6 +7,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, classification_report
 
+# MLflow tracking lokal agar aman di GitHub Actions
 mlflow.set_tracking_uri("file:./mlruns")
 mlflow.set_experiment("Credit Scoring")
 
@@ -25,11 +26,7 @@ X_train, X_test, y_train, y_test = train_test_split(
     random_state=42
 )
 
-# Autolog MLflow
-mlflow.sklearn.autolog(log_models=False)
-
-# Training model
-with mlflow.start_run():
+with mlflow.start_run(run_name="RandomForest_Credit_Scoring"):
     model = RandomForestClassifier(random_state=42)
     model.fit(X_train, y_train)
 
@@ -37,10 +34,14 @@ with mlflow.start_run():
     accuracy = accuracy_score(y_test, y_pred)
 
     print("Accuracy:", accuracy)
-    print("\nClassification Report:\n")
+    print("\nClassification Report:")
     print(classification_report(y_test, y_pred))
+
+    mlflow.log_metric("accuracy", accuracy)
 
     joblib.dump(model, "credit_score_model.pkl")
     mlflow.log_artifact("credit_score_model.pkl")
+
+    mlflow.sklearn.log_model(model, "model")
 
     print("\nModel berhasil dilatih dan disimpan")
