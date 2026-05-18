@@ -18,12 +18,11 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: Install Dependencies
+      - name: Install MLflow
         run: |
-           cd Workflow-CI/MLProject
-          mlflow run . --env-manager=local
+          pip install mlflow
 
       - name: Run MLflow Project
         run: |
-          cd Membangun_model
+          cd Workflow-CI/MLProject
           mlflow run . --env-manager=local
