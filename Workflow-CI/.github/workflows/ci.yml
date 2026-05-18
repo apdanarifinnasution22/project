@@ -20,8 +20,8 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          pip install mlflow
-          pip install -r Membangun_model/requirements.txt
+           cd Workflow-CI/MLProject
+          mlflow run . --env-manager=local
 
       - name: Run MLflow Project
         run: |
